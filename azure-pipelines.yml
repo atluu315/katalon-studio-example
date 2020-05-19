@@ -3,7 +3,7 @@
   inputs:
     version: '7.4.0'
     executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/Regression Tests/All tests"'
-    x11Display: '-a -n 0 -s "-screen 0 1024x768x24"'
+    xvfbConfiguration: '-a -n 0 -s "-screen 0 1024x768x24"'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
