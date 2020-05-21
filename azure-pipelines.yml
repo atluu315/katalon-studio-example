@@ -6,7 +6,7 @@
 trigger:
 - master
 
-#run on a linux machine
+#run the pipeline on a linux machine
 pool:
   vmImage: 'ubuntu-latest'
 
