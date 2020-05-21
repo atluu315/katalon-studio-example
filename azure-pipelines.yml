@@ -8,7 +8,7 @@ trigger:
 
 #run the pipeline on a linux machine
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 #include apiKey in the command to fetch online license
 #Command is from Uses in README.md file at https://github.com/katalon-studio/docker-images
