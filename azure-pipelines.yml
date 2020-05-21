@@ -7,15 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
-- script: docker pull katalonstudio/katalon
-  displayName: 'Pull katalon studio images'
-- script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="fdb89052-b651-46fe-ac7c-b7b4b305eb55"
-  displayName: 'Runnning Katalon TS_RegressionTest'
-- task: PublishPipelineArtifact@0
+- task: katalonTask@0
   inputs:
-    artifactName: 'JUnit Report' 
-    targetPath: report/
+    version: '7.4.0'
+    executeArgs: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/Regression Tests/All tests" -apiKey=fdb89052-b651-46fe-ac7c-b7b4b305eb55'
 
